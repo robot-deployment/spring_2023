@@ -1,0 +1,3771 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta name="robots" content="nofollow" />
+
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Daniel M. Aukes">
+      
+      
+      
+        <link rel="prev" href="../links/">
+      
+      
+        <link rel="next" href="../../lecture-notes/02/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+            
+
+        
+
+    
+      
+        <title>Syllabus - Robot Deployment</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+  <script src="../../javascripts/mathjax.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Robot Deployment" class="md-header__button md-logo" aria-label="Robot Deployment" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Robot Deployment
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Syllabus
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/robot-deployment/project_robot-deployment" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../links/" class="md-tabs__link">
+          
+  
+    
+  
+  Course info
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lecture-notes/02/" class="md-tabs__link">
+          
+  
+    
+  
+  Lecture notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tutorials/parts/" class="md-tabs__link">
+          
+  
+    
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Robot Deployment" class="md-nav__button md-logo" aria-label="Robot Deployment" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Robot Deployment
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/robot-deployment/project_robot-deployment" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Course info
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Course info
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../links/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Links
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Syllabus
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Syllabus
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-basics" class="md-nav__link">
+    Class Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Class Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#section-info-and-meeting-times" class="md-nav__link">
+    Section Info and Meeting Times
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instructor-contact-info" class="md-nav__link">
+    Instructor Contact Info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#office-hours" class="md-nav__link">
+    Office Hours
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-objectives" class="md-nav__link">
+    Course Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-learning-outcomes" class="md-nav__link">
+    Expected Learning Outcomes
+  </a>
+  
+    <nav class="md-nav" aria-label="Expected Learning Outcomes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repositories-and-version-control" class="md-nav__link">
+    Repositories and Version Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robotics" class="md-nav__link">
+    Robotics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimentation" class="md-nav__link">
+    Experimentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robot-hardware-and-communiation" class="md-nav__link">
+    Robot Hardware and Communiation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#team-based-project-management-communication-etc" class="md-nav__link">
+    Team-based project management, communication, etc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textbook-materials-equipment-and-personal-laptops" class="md-nav__link">
+    Textbook, Materials, Equipment, and Personal Laptops
+  </a>
+  
+    <nav class="md-nav" aria-label="Textbook, Materials, Equipment, and Personal Laptops">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textbook" class="md-nav__link">
+    Textbook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    Software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computers" class="md-nav__link">
+    Computers
+  </a>
+  
+    <nav class="md-nav" aria-label="Computers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-specs" class="md-nav__link">
+    Hardware Specs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peripheral-requirements" class="md-nav__link">
+    Peripheral Requirements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-equipment" class="md-nav__link">
+    Other Equipment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkout" class="md-nav__link">
+    Checkout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-recommended-resources" class="md-nav__link">
+    Other recommended resources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project" class="md-nav__link">
+    Project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-schedule" class="md-nav__link">
+    Class Schedule
+  </a>
+  
+    <nav class="md-nav" aria-label="Class Schedule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tentative-schedule1" class="md-nav__link">
+    Tentative Schedule\(^1\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assignments" class="md-nav__link">
+    Assignments
+  </a>
+  
+    <nav class="md-nav" aria-label="Assignments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tentative-assignment-schedule-3" class="md-nav__link">
+    Tentative Assignment Schedule \(^3\)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-succeed-in-this-course" class="md-nav__link">
+    How to Succeed in this Course
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grading-policies" class="md-nav__link">
+    Grading Policies
+  </a>
+  
+    <nav class="md-nav" aria-label="Grading Policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assignments-are-on-canvas" class="md-nav__link">
+    Assignments are on Canvas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-of-assignments" class="md-nav__link">
+    Type of Assignments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-vs-individual-assignments" class="md-nav__link">
+    Project vs. Individual Assignments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grading-scale" class="md-nav__link">
+    Grading Scale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grading-rubric" class="md-nav__link">
+    Grading Rubric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#late-penalities" class="md-nav__link">
+    Late Penalities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitting-and-presenting-work" class="md-nav__link">
+    Submitting and Presenting work
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-policies" class="md-nav__link">
+    Course Policies
+  </a>
+  
+    <nav class="md-nav" aria-label="Course Policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attendance-participation" class="md-nav__link">
+    Attendance &amp; Participation
+  </a>
+  
+    <nav class="md-nav" aria-label="Attendance & Participation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    Details
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accommodations" class="md-nav__link">
+    Accommodations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classroom-behavior" class="md-nav__link">
+    Classroom Behavior
+  </a>
+  
+    <nav class="md-nav" aria-label="Classroom Behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details_1" class="md-nav__link">
+    Details
+  </a>
+  
+    <nav class="md-nav" aria-label="Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#professional-communication" class="md-nav__link">
+    Professional Communication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cell-phones-pagers-and-other-personal-devices" class="md-nav__link">
+    Cell phones, pagers, and other personal devices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-laptops-in-class" class="md-nav__link">
+    Use of laptops in class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reorganizing-a-team" class="md-nav__link">
+    Reorganizing a Team
+  </a>
+  
+    <nav class="md-nav" aria-label="Reorganizing a Team">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary_2" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details_2" class="md-nav__link">
+    Details
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#academic-integrity" class="md-nav__link">
+    Academic Integrity
+  </a>
+  
+    <nav class="md-nav" aria-label="Academic Integrity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specific-rules" class="md-nav__link">
+    Specific Rules
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordings" class="md-nav__link">
+    Recordings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copyright" class="md-nav__link">
+    Copyright
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policy-against-threatening-behavior-per-the-student-services-manual-ssm-10402" class="md-nav__link">
+    Policy against threatening behavior, per the Student Services Manual, SSM 104–02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disability-accommodations" class="md-nav__link">
+    Disability Accommodations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harassment-and-sexual-discrimination" class="md-nav__link">
+    Harassment and Sexual Discrimination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#student-support-services" class="md-nav__link">
+    Student Support Services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notice" class="md-nav__link">
+    Notice
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Lecture notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Lecture notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lecture-notes/02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 02 Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lecture-notes/03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 03 Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lecture-notes/04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 04 Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lecture-notes/05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 05 Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lecture-notes/07-08/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 07-08 Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lecture-notes/11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 11 Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lecture-notes/13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 13 Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lecture-notes/14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 14 Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lecture-notes/15/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 15 Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lecture-notes/19/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 19 notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lecture-notes/20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 20 Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lecture-notes/22/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 22 Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/parts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/vscode-info/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VSCode Info
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Jupyter and python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Jupyter and python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/jupyter-and-python/grab-data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Grab Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/jupyter-and-python/plot_imu_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plot IMU Data in ROS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fft
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Fft
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/jupyter-and-python/fft/fft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotting FFTs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_4" id="__nav_4_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Filtering example
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Filtering example
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/jupyter-and-python/filtering-example/filtering-example/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simple Filtering Example
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_5" id="__nav_4_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Simple plot example
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Simple plot example
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/jupyter-and-python/simple-plot-example/simple-plot-example/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simple Plotting Example
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/linux/01-linux-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tutorials/opencv/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Opencv
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Opencv
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ros
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ros
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/ros/01-colcon-and-ws/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 colcon and ws
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/ros/02-open-cv-subscriber/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating a simple OpenCV Subscriber
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/ros/03-plotting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotting in Ros
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ssh and networking
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ssh and networking
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/ssh-and-networking/01-using-ssh-keys/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using SSH Keys
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/ssh-and-networking/02-using-hosts-file/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Ubuntu's Hosts File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/ssh-and-networking/03-dds-options/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03 dds options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/ssh-and-networking/04-unicast-with-cyclone/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unicast with CycloneDDS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Turtlebot
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Turtlebot
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tutorials/turtlebot/01-turtlebot-unboxing/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    01 turtlebot unboxing
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            01 turtlebot unboxing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tutorials/turtlebot/02-turtlebot-configuration/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    02 turtlebot configuration
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            02 turtlebot configuration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tutorials/turtlebot/03-usb-control/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    03 usb control
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            03 usb control
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tutorials/turtlebot/04-oak-d-camera/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    04 oak d camera
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            04 oak d camera
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Virtual machine
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            Virtual machine
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tutorials/virtual%20machine/01-installing-ubuntu-20-on-virtualbox/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    01 installing ubuntu 20 on virtualbox
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            01 installing ubuntu 20 on virtualbox
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9_2" id="__nav_4_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    02 installing ros and configuring your environment
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            02 installing ros and configuring your environment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/virtual%20machine/02-installing-ros-and-configuring-your-environment/01-installing-ros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing ROS2 (galactic) on Ubuntu 20.04
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/virtual%20machine/02-installing-ros-and-configuring-your-environment/02-configuring-your-environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing and Configuring your ROS2 Environment in a VirtualBox Guest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9_3" id="__nav_4_9_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Misc
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            Misc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/virtual%20machine/misc/controlling-your-vm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Controlling your VM from the Terminal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-basics" class="md-nav__link">
+    Class Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Class Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#section-info-and-meeting-times" class="md-nav__link">
+    Section Info and Meeting Times
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instructor-contact-info" class="md-nav__link">
+    Instructor Contact Info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#office-hours" class="md-nav__link">
+    Office Hours
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-objectives" class="md-nav__link">
+    Course Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-learning-outcomes" class="md-nav__link">
+    Expected Learning Outcomes
+  </a>
+  
+    <nav class="md-nav" aria-label="Expected Learning Outcomes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repositories-and-version-control" class="md-nav__link">
+    Repositories and Version Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robotics" class="md-nav__link">
+    Robotics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimentation" class="md-nav__link">
+    Experimentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robot-hardware-and-communiation" class="md-nav__link">
+    Robot Hardware and Communiation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#team-based-project-management-communication-etc" class="md-nav__link">
+    Team-based project management, communication, etc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textbook-materials-equipment-and-personal-laptops" class="md-nav__link">
+    Textbook, Materials, Equipment, and Personal Laptops
+  </a>
+  
+    <nav class="md-nav" aria-label="Textbook, Materials, Equipment, and Personal Laptops">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textbook" class="md-nav__link">
+    Textbook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    Software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computers" class="md-nav__link">
+    Computers
+  </a>
+  
+    <nav class="md-nav" aria-label="Computers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-specs" class="md-nav__link">
+    Hardware Specs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peripheral-requirements" class="md-nav__link">
+    Peripheral Requirements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-equipment" class="md-nav__link">
+    Other Equipment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkout" class="md-nav__link">
+    Checkout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-recommended-resources" class="md-nav__link">
+    Other recommended resources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project" class="md-nav__link">
+    Project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-schedule" class="md-nav__link">
+    Class Schedule
+  </a>
+  
+    <nav class="md-nav" aria-label="Class Schedule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tentative-schedule1" class="md-nav__link">
+    Tentative Schedule\(^1\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assignments" class="md-nav__link">
+    Assignments
+  </a>
+  
+    <nav class="md-nav" aria-label="Assignments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tentative-assignment-schedule-3" class="md-nav__link">
+    Tentative Assignment Schedule \(^3\)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-succeed-in-this-course" class="md-nav__link">
+    How to Succeed in this Course
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grading-policies" class="md-nav__link">
+    Grading Policies
+  </a>
+  
+    <nav class="md-nav" aria-label="Grading Policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assignments-are-on-canvas" class="md-nav__link">
+    Assignments are on Canvas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-of-assignments" class="md-nav__link">
+    Type of Assignments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-vs-individual-assignments" class="md-nav__link">
+    Project vs. Individual Assignments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grading-scale" class="md-nav__link">
+    Grading Scale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grading-rubric" class="md-nav__link">
+    Grading Rubric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#late-penalities" class="md-nav__link">
+    Late Penalities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitting-and-presenting-work" class="md-nav__link">
+    Submitting and Presenting work
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-policies" class="md-nav__link">
+    Course Policies
+  </a>
+  
+    <nav class="md-nav" aria-label="Course Policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attendance-participation" class="md-nav__link">
+    Attendance &amp; Participation
+  </a>
+  
+    <nav class="md-nav" aria-label="Attendance & Participation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    Details
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accommodations" class="md-nav__link">
+    Accommodations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classroom-behavior" class="md-nav__link">
+    Classroom Behavior
+  </a>
+  
+    <nav class="md-nav" aria-label="Classroom Behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details_1" class="md-nav__link">
+    Details
+  </a>
+  
+    <nav class="md-nav" aria-label="Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#professional-communication" class="md-nav__link">
+    Professional Communication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cell-phones-pagers-and-other-personal-devices" class="md-nav__link">
+    Cell phones, pagers, and other personal devices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-laptops-in-class" class="md-nav__link">
+    Use of laptops in class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reorganizing-a-team" class="md-nav__link">
+    Reorganizing a Team
+  </a>
+  
+    <nav class="md-nav" aria-label="Reorganizing a Team">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary_2" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details_2" class="md-nav__link">
+    Details
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#academic-integrity" class="md-nav__link">
+    Academic Integrity
+  </a>
+  
+    <nav class="md-nav" aria-label="Academic Integrity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specific-rules" class="md-nav__link">
+    Specific Rules
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordings" class="md-nav__link">
+    Recordings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copyright" class="md-nav__link">
+    Copyright
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policy-against-threatening-behavior-per-the-student-services-manual-ssm-10402" class="md-nav__link">
+    Policy against threatening behavior, per the Student Services Manual, SSM 104–02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disability-accommodations" class="md-nav__link">
+    Disability Accommodations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harassment-and-sexual-discrimination" class="md-nav__link">
+    Harassment and Sexual Discrimination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#student-support-services" class="md-nav__link">
+    Student Support Services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notice" class="md-nav__link">
+    Notice
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/robot-deployment/project_robot-deployment/edit/main/docs/course-info/syllabus.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<h2 id="overview">Overview</h2>
+<p><strong><em>Experimentation and Deployment of Robotic Systems</em></strong>
+is a course organized around the principles of robotic data collection, aggregation, interaction, and decision-making so that students can more effectively conduct experimental validation of robotic systems, deploy mobile and autonomous robotic systems, and more closely interact with robots across various types of real and synthetic data streams.  It walks students through the principles of interacting with sensors and hardware, signal conditioning, and model-driven data, building data pipelines for the purposes of data collection, visualization, and control.  This class studies resulting systems, with a focus on communication, data, and decision-making, with application-specific experimental/mobile projects.  </p>
+<h2 id="class-basics">Class Basics</h2>
+<h3 id="section-info-and-meeting-times">Section Info and Meeting Times</h3>
+<p><strong>Class:</strong> EGR 598-- Experimentation and Deployment of Robotic Systems<br />
+<strong>Class Schedule:</strong>  Monday / Wednesday 1:30pm-2:45pm<br />
+<strong>Meeting Location:</strong> Polytechnic Campus, Peralta 103
+<strong>Course Number:</strong>  36207  </p>
+<!--**Group Office Hours:** Friday, 10:30-11:45, Tech 162, Polytechnic Campus-->
+<!--**Zoom Link:** Available on <https://my.asu.edu>-->
+
+<h3 id="instructor-contact-info">Instructor Contact Info</h3>
+<p><strong>Instructor:</strong> Daniel M. Aukes<br />
+<strong>E-mail:</strong> <a href="mailto://danaukes@asu.edu">danaukes@asu.edu</a><br />
+<strong>Instructor Office:</strong> Santa Catalina 331C, Polytechnic Campus  </p>
+<!--
+**Office Phone:** 480-727-5851
+-->
+
+<h3 id="office-hours">Office Hours</h3>
+<p>Office Hours will held weekly starting week 2 or may be made by appointment.  I will run a survey to identify the best time to hold office hours within my own constraints.  This document will be updated to reflect the official office hours that start week 2.  This document will be updated to reflect up-to-date office hours as needed.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>There are no formal prerequisites, but students taking EGR598 should be familiar with:</p>
+<ul>
+<li>Programming fundamentals, ideally in a scripted language like Python or Matlab.</li>
+<li>Linear algebra, differential equations, calculus, trigonometry, vectors, etc.</li>
+<li>The fundamentals of embedded systems, mechatronics</li>
+<li>The basics of serial communication, such as TCP/IP and other common ethernet protocols</li>
+<li>Willing to try Ubuntu</li>
+</ul>
+<h2 id="course-objectives">Course Objectives</h2>
+<p>At the end of this course, students will demonstrate proficiency in synthesizing concepts from across a number of engineering domains including robotics, modeling and analysis, optimization, data collection and experimental validation, etc.  This includes:</p>
+<h2 id="expected-learning-outcomes">Expected Learning Outcomes</h2>
+<h3 id="python">Python</h3>
+<ul>
+<li>You will be able to install various packages in Python</li>
+<li>You will be able to identify and utilize the key differences between data types in writing Python code.</li>
+<li>You will be able to create and use functions for the purposes of modularizing Python code</li>
+<li>You will be able to plot multidimensional tabular data as figures using the matplotlib library.</li>
+<li>You will be able to demonstrate how to perform array and matrix-based operations using the Numpy and Scipy packages</li>
+<li>You will be able to use Python to work with graphical user interfaces</li>
+<li>You will be able to integrate python plotting and data visualization with graphical user interfaces</li>
+<li>You will be able to add user control to windows and GUIs</li>
+</ul>
+<h3 id="repositories-and-version-control">Repositories and Version Control</h3>
+<ul>
+<li>You will be able to list the basic functions of version control tools like git</li>
+<li>You will be able to employ the basic functions of version control tools like git</li>
+<li>You will be able to create a new project in version control tools like git</li>
+<li>You will be able to structure a new project in version control tools like git using submodules</li>
+<li>You can demonstrate documenting your project in version control tools like git</li>
+</ul>
+<h3 id="robotics">Robotics</h3>
+<ul>
+<li>You will be able to read from or write to existing hardware data streams in ROS</li>
+<li>You will be able to develop new data streams for existing off-the-shelf hardware in ROS</li>
+<li>You will be able to develop data streams for novel hardware in ROS</li>
+<li>You will be able to develop basic controllers</li>
+<li>You will be able to develop and deploy higher-level controllers and algorithms for sensing and control.</li>
+</ul>
+<h3 id="experimentation">Experimentation</h3>
+<ul>
+<li>You will understand best practices for developing an experiment</li>
+<li>Understand ways to reduce noise and variation</li>
+<li>Develop a small experiment and collect data</li>
+<li>Interpret sources of error and corrective actions</li>
+</ul>
+<h3 id="robot-hardware-and-communiation">Robot Hardware and Communiation</h3>
+<ul>
+<li>you will be able to install tools like the Robot Operating System (ROS)</li>
+<li>You will be able to publish and subscribe to topics through a communication layer such as ROS</li>
+<li>You will be able to create and deploy nodes and services coded in languages like Python and C++</li>
+</ul>
+<h3 id="team-based-project-management-communication-etc">Team-based project management, communication, etc</h3>
+<ul>
+<li>Develop a project website for communicating progress in various forms</li>
+<li>Present work orally to the class</li>
+<li>Present work in written form.</li>
+<li>Present data usefully, in graphical forms.</li>
+<li>Present work through edited videos.</li>
+</ul>
+<h2 id="textbook-materials-equipment-and-personal-laptops">Textbook, Materials, Equipment, and Personal Laptops</h2>
+<h3 id="textbook">Textbook</h3>
+<p><strong>A Concise Introduction to Robot Programming with ROS2</strong>(recommended)
+Francisco Martín Rico<br />
+1st Edition<br />
+eBook ISBN 9781003289623  </p>
+<h3 id="software">Software</h3>
+<p>You will be expected to install and use the following software (not a complete list)</p>
+<ul>
+<li>Virtualbox</li>
+<li>In a Virtual Machine:<ul>
+<li>Ubuntu 20.04</li>
+<li>ROS2 (Galactic)</li>
+<li>various other programs</li>
+</ul>
+</li>
+</ul>
+<p>This class is friendly to all operating systems.  Students have used Windows, Ubuntu or OS/X on their own in the past with no problems.</p>
+<h3 id="computers">Computers</h3>
+<p>It is expected that you can bring a laptop to class to complete in-class programming tasks.  </p>
+<h4 id="hardware-specs">Hardware Specs</h4>
+<ul>
+<li>8Gb RAM</li>
+<li>minimum 50Gb free space</li>
+</ul>
+<h4 id="peripheral-requirements">Peripheral Requirements</h4>
+<ul>
+<li>Admin access to home router with both 2.4GHz and 5GHz available</li>
+<li>Computer monitor</li>
+<li>4-port USB hub</li>
+<li>wired ethernet port or USB dongle (optional)</li>
+<li>various USB cables (micro/mini/USB-C)</li>
+</ul>
+<h3 id="other-equipment">Other Equipment</h3>
+<p>Special tools and equipment required for completeing this class will be made available for use on the Poly Campus.  </p>
+<h3 id="checkout">Checkout</h3>
+<p>Checkout of equipment or reusable parts may be possible through Dr. Aukes, the Innovation Hub, or Peralta Labs.  Any checked-out tools or parts must be returned in order to receive a grade in the class.</p>
+<h3 id="other-recommended-resources">Other recommended resources</h3>
+<ul>
+<li>Adobe Creative Cloud, available to all ASU students for free: <a href="https://uto.asu.edu/adobe-creative-cloud">https://uto.asu.edu/adobe-creative-cloud</a>.</li>
+<li>Microsoft Office (<a href="https://myapps.asu.edu/app/microsoft-office-2016-home-usage">Microsoft 365</a> is free for all currently-enrolled ASU students)</li>
+<li>Solidwoks, available via <a href="https://myapps.asu.edu">https://myapps.asu.edu</a></li>
+</ul>
+<!--There are 20 workstations arranged around the perimeter of Tech 162 with computers.  Anaconda is already installed, but it will be difficult to follow along when you're pointed the other direction from the front of the room.  We will use the workstations for your device development, but if you are able, please bring laptops to class.  You'll be able to follow along in the front a lot easier.  If you don't have a laptop that you can bring, we'll try to put you in the closer workstations.
+-->
+
+<h2 id="project">Project</h2>
+<p>The final project will involve developing and deploying a robotic system using the methods introduced in this class.   The project will span the last few weeks of the semester.</p>
+<h1 id="class-schedule">Class Schedule</h1>
+<p>The class schedule can be found on Canvas.  It is subject to change, and will be updated regularly. It is your responsibility to keep track of all due dates and times, which will all be found on canvas.</p>
+<h2 id="tentative-schedule1">Tentative Schedule<span class="arithmatex">\(^1\)</span></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Lecture</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Welcome</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Linux I</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Linux II</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Linux III</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Git &amp; Github</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Python I</td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Python II</td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">Python III</td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Python IV</td>
+</tr>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Python V</td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">ROS I: Introduction</td>
+</tr>
+<tr>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">ROS II: Tutorial 1</td>
+</tr>
+<tr>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">ROS III: Topics</td>
+</tr>
+<tr>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">ROS IV: Nodes and Services</td>
+</tr>
+<tr>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">ROS V: GUIs and Bag Files</td>
+</tr>
+<tr>
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">Ethernet and Networking</td>
+</tr>
+<tr>
+<td style="text-align: left;">17</td>
+<td style="text-align: left;">Hardware I: Cameras</td>
+</tr>
+<tr>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">Hardware II: Serial Data</td>
+</tr>
+<tr>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">Hardware III: Robots</td>
+</tr>
+<tr>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">Hardware IV: TurtleBot</td>
+</tr>
+<tr>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">Filtering Data</td>
+</tr>
+<tr>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">Control</td>
+</tr>
+<tr>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">Project Time</td>
+</tr>
+<tr>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">Computer Vision</td>
+</tr>
+<tr>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">Project Time</td>
+</tr>
+<tr>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">Machine Learning / AI</td>
+</tr>
+<tr>
+<td style="text-align: left;">27</td>
+<td style="text-align: left;">Project Time</td>
+</tr>
+<tr>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;">Project Time</td>
+</tr>
+<tr>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;">Project Time</td>
+</tr>
+<tr>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">Final Presentations</td>
+</tr>
+</tbody>
+</table>
+<p><span class="arithmatex">\(^1\)</span> The Schedule is subject to change with appropriate warning.</p>
+<h2 id="assignments">Assignments</h2>
+<!--
+### Assignment Breakdown$^2$
+
+|        Item         |        % |
+| :-----------------: | -------: |
+| Individual Subtotal |      X% |
+|    Team Subtotal    |      Y% |
+|      **Total**      | **100%** |
+
+$^2$Assignments, totals, relative weighting, and due dates are subject to change with appropriate warning.
+-->
+
+<h3 id="tentative-assignment-schedule-3">Tentative Assignment Schedule <span class="arithmatex">\(^3\)</span></h3>
+<p>Expect roughly one assignment per week, consisting of tasks to complete at home related to the week's lecture topics.</p>
+<p><span class="arithmatex">\(^3\)</span> Assignments, totals, relative weighting, and due dates are subject to change with appropriate warning.  Please see Canvas for the current schedule.</p>
+<h1 id="how-to-succeed-in-this-course">How to Succeed in this Course</h1>
+<ul>
+<li>Attend all class sessions</li>
+<li>Complete all pre-class preparation assignments and reading</li>
+<li>Complete all post-class follow up assignments and reading</li>
+<li>Participate in office hours</li>
+<li>Check your ASU email regularly</li>
+<li>Log in to the Canvas at least once each week</li>
+<li>Communicate proactively with your instructor</li>
+<li>Create a study schedule so that you don’t fall behind on assignments</li>
+</ul>
+<h1 id="grading-policies">Grading Policies</h1>
+<p>The goal of assignments is to develop a fundamental understanding of the topics required to deploy robotic systems in experiment designs and in the field.</p>
+<h2 id="assignments-are-on-canvas">Assignments are on Canvas</h2>
+<p>Assignments will be posted to Canvas throughout the semester.  It is the student's responsibility to check canvas periodically for announcements and posted material.  Assignments will cover many of the topics presented in class.  </p>
+<h2 id="type-of-assignments">Type of Assignments</h2>
+<p>Assigned work may be in the form of a longer-form, weekly assignment intended to teach a new fundamental skill, or it may be a short, small-point-value assignment consisting of tasks that must be completed in order for you to complete other milestones.  Some surveys also have a small number of points assigned to them, to ensure student participation.  In-class work generally serves as a starting point for assigned homework and is typically ungraded, though it may be graded occasionally.  </p>
+<p>Please see the <em>"Rubric"</em> section of each assignment for assignment-specific expectations.</p>
+<h2 id="project-vs-individual-assignments">Project vs. Individual Assignments</h2>
+<p>Assigned work may be individual in nature or team-based project assignments.  Individual assignments will be graded on an individual basis, and are intended to reflect your own work.  Please use the discussion board feature on Canvas when you have a question. Copying others' work is not permitted. <!--Though you may work with other students to complete an assignment, --></p>
+<p>The grade for team-based assignments will be shared by all participating members.  </p>
+<h2 id="grading-scale">Grading Scale</h2>
+<p>Final points will receive a letter grade according to the following table:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Grade</th>
+<th style="text-align: right;">Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">A+</td>
+<td style="text-align: right;">97-100.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">93-96.9</td>
+</tr>
+<tr>
+<td style="text-align: left;">A-</td>
+<td style="text-align: right;">90-92.9</td>
+</tr>
+<tr>
+<td style="text-align: left;">B+</td>
+<td style="text-align: right;">87-89.9</td>
+</tr>
+<tr>
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">83-86.9</td>
+</tr>
+<tr>
+<td style="text-align: left;">B-</td>
+<td style="text-align: right;">80-82.9</td>
+</tr>
+<tr>
+<td style="text-align: left;">C+</td>
+<td style="text-align: right;">77-79.9</td>
+</tr>
+<tr>
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">70-76.9</td>
+</tr>
+<tr>
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">60-69.9</td>
+</tr>
+<tr>
+<td style="text-align: left;">E</td>
+<td style="text-align: right;">0-59.9</td>
+</tr>
+</tbody>
+</table>
+<h2 id="grading-rubric">Grading Rubric</h2>
+<p>Some assignments will be graded according to rubric with number values corresponding to a sliding qualitative scale .  The following is a general description of what each percentage means in this course:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Description</th>
+<th style="text-align: right;">%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Exceeds Expectations. Shows superior effort, quality, mastering of the concepts.  Innovation in the execution of submitted work.  Documentation is publication-ready.</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr>
+<td style="text-align: left;">Above expectations.  Demonstrates full understanding of the problem, and solution is well executed, documented, and presented.</td>
+<td style="text-align: right;">85</td>
+</tr>
+<tr>
+<td style="text-align: left;">Meets expectations.  Minor mistakes are present, but student demonstrates a general understanding of the concepts.  Documentation present but perhaps not comprehensive.</td>
+<td style="text-align: right;">70</td>
+</tr>
+<tr>
+<td style="text-align: left;">Below expectations. Some effort shown, though there may be serios flaws in analysis or execution.  Documentation lacking in certain areas.</td>
+<td style="text-align: right;">55</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fails to meet minimum expections.  Minimal effort shown.  Does not show understanding and may not have thought through their methods.  Documentation is lacking substance, clarity, completeness, evidence of effort.</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr>
+<td style="text-align: left;">Not submitted, illegible, not readable, not properly linked</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<!--
+## Peer Grading
+
+Some aspects of the course will utilize student feedback during the grading process, including but not limited to peer evaluations of individual contributions to the project, as well as design review presentations.  Student feedback may be used as a direct grade or considered within the instructor's grade at the instructors' discretion.
+-->
+
+<h2 id="late-penalities">Late Penalities</h2>
+<p>Due to the nature of this class, failing to turn in an assignment on time affects you and your classmates, as each concept builds on the last.  It is your responsibility to get in touch with the instructor regarding any questions before assignments are due.  Late submissions will lose one letter grade(10%) for every day they are late<span class="arithmatex">\(^4\)</span>.  <strong>Any sumbission more than four days late will receive a zero.</strong>  Additionally, due to the nature of the submission process, <strong>late CATME assignments will not be accepted.</strong></p>
+<p>All assignments must be submitted to Canvas by the date and time noted in Canvas.</p>
+<!--
+557 Projects must participate in the Innovation Showcase on Friday, April 27.  Individual attendance is not required, but team attendance is.  Students should coordinate with their team and instructor to ensure that their project can be operated or displayed for the entirety of Innovation Showcase.
+-->
+
+<p><span class="arithmatex">\(^4\)</span> meaning 10% of the total possible number of points</p>
+<h2 id="submitting-and-presenting-work">Submitting and Presenting work</h2>
+<p>Assignment submissions must follow the "Submission Best Practices" document shared on Canvas.  It outlines the expectations for well written assignments, reports, and presentations.</p>
+<p>Assigned homework will be submitted for grading several different ways.  This is always indicated in the <em>"Submission"</em> section of each assignment.</p>
+<ul>
+<li>It may be submitted for grading via Canvas.  </li>
+<li>Other work involving external tools (Google Surveys, CATME, etc) will be graded based on submitting to that external tool.  </li>
+<li>Some work will be presented in front of the class, and the grade derived from the presentation.  </li>
+<li>Other work will be compiled into the design notebook (in the form of a website or report) and graded priodically.</li>
+</ul>
+<p><strong><em>It is the student's responsibility to pay close attention to each assignment's submission instructions, as each assignment indicates the method by which the work must be submitted for grading.  Failure to submit work in the manner asked for in each assignment will result in a zero.</em></strong></p>
+<h1 id="course-policies">Course Policies</h1>
+<h2 id="attendance-participation">Attendance &amp; Participation</h2>
+<h3 id="summary">Summary</h3>
+<ul>
+<li>Attendance is <strong>required</strong>.  More than two absences result in -2% grade reduction per missed class.</li>
+<li>Absences and Tardies are treated the same</li>
+<li>Coordinate with fellow students to take notes if you are gone.</li>
+<li>Email me at once of technical difficulties over Zoom, but try to reconnect ASAP using other technology (Hotspot, cell-phone, call-in, etc.)</li>
+<li>If you are registered, you must attend the first class or I will ask that you drop the course.  This is due to the high demand for a small number of open slots.</li>
+</ul>
+<!--
+* Attend in-person or over Zoom, _however_ attendance is taken over Zoom, so **always sign on to Zoom**, even if attending in person
+-->
+
+<h3 id="details">Details</h3>
+<p>This class is structured so that it can only be successful with your attendance.  Classes will be interactive, and will require you to come with questions, answers, and ideas to discuss.  Students should notify me if they will miss class, although this does not excuse them from learning the concepts or turning in their assignments on time.  </p>
+<p>Missing more than <strong>two</strong> classes will result in noticeable penalties to students' grade, in the form of -2% off the student's final grade per missed class over two.<span class="arithmatex">\(^5\)</span></p>
+<p>Please coordinate with your fellow students to make sure someone takes notes during class if you will be unavoidably gone.</p>
+<!--
+As this is a Sync-enabled course, however, in-person attendance is not required.  It is possible to complete all assigned work remotely.  
+
+_Attending the class in person doesn't change any of the above requirements.  You will still be required to sign in to Zoom to participate and be counted present._
+
+-->
+<p><span class="arithmatex">\(^5\)</span> counted as 2% of total points.</p>
+<h3 id="accommodations">Accommodations</h3>
+<p>Attendance and participation in class activities is an essential part of the learning process, and students are expected to attend class regularly. Some absences are, however, unavoidable. Excused absences for classes will be given without penalty to the grade in the case of (1) a university-sanctioned event <a href="https://www.asu.edu/aad/manuals/acd/acd304-02.html">ACD 304-02</a>; (2) religious holidays <a href="https://www.asu.edu/aad/manuals/acd/acd304-04.html">ACD 304-04</a>; a list can be found <a href="https://eoss.asu.edu/cora/holidays">here</a>; (3) work performed in the line-of-duty according to <a href="https://www.asu.edu/aad/manuals/ssm/ssm201-18.html">SSM 201-18</a>; and (4) illness, quarantine or self-isolation related to illness as documented by a health professional.</p>
+<p>Anticipated absences for university-sanctioned events, religious holidays, or line-of-duty activity should be communicated to the instructor by email at <a href="mailto://danaukes@asu.edu">danaukes@asu.edu</a>, at least 2 days before the expected absence.</p>
+<p>Absences for illness, quarantine or self-isolation related to illness should be documented by a health professional and communicated to the instructor as soon as possible by email at <a href="mailto://danaukes@asu.edu">danaukes@asu.edu</a>.</p>
+<p>Excused absences do not relieve students from responsibility for any part of the course work required during the period of absence. Faculty will provide accommodations that may include participation in classes remotely, access to recordings of class activities, and make-up work.</p>
+<p>If there is a disagreement as to whether an absence should be accommodated, the instructor and student should contact the academic unit chair immediately for resolution.</p>
+<!--We will coordinate on the first day of class to determine an appropriate way to submit assignments and projects.  They will be due before class on the day indicated; this process will likely be automated,  so late assignments will not be recorded(or automatically marked as late).  It will be your responsibility to submit late assignments to me *via email* as well.  The date and time the email was received will determine the number of late days.-->
+
+<!--
+Students are allowed **five** late days to submit individual assignments, to be used as they see fit.  There are no late days available for group assignments or projects.  It is the responsibility of students to keep track of the number of late days they have used.
+-->
+
+<h1 id="classroom-behavior">Classroom Behavior</h1>
+<h3 id="summary_1">Summary</h3>
+<ul>
+<li>Keep all communication professional</li>
+<li>Turn off all cell phones, pagers, and other personal devices when participating in class</li>
+<li>Use your laptops for classroom activities, not email, chats, web browsing, or other non-class related activities.</li>
+</ul>
+<h3 id="details_1">Details</h3>
+<h4 id="professional-communication">Professional Communication</h4>
+<p>Professional Communication in all forms is required.  This includes proper dress when attending class remotely and in-person.  Please refrain from using any background images in your zoom video feed, though you should consider blacking out your background for privacy and professionalism.</p>
+<h4 id="cell-phones-pagers-and-other-personal-devices">Cell phones, pagers, and other personal devices</h4>
+<p>Cell phones, pagers, and other personal devices must be turned off during class to avoid causing distractions.  The use of recording devices is not permitted during class.  Any violent or threatening conduct by an ASU student in this class will be reported to the ASU Police Department and the Office of the Dean of Students.  </p>
+<h4 id="use-of-laptops-in-class">Use of laptops in class</h4>
+<p>Laptops are strongly suggested for this course.  You may use your laptop to take notes, during tutorial sessions, or when giving presentations.  Please do not use class time for emails, chats, web browsing, or other non-class related activities.</p>
+<h2 id="reorganizing-a-team">Reorganizing a Team</h2>
+<h3 id="summary_2">Summary</h3>
+<ul>
+<li>Please try to work out any team-based issues.</li>
+<li>Please see me if the team is not working.  I may choose to split the team</li>
+</ul>
+<h3 id="details_2">Details</h3>
+<p>Reorganizing teams is not a desired outcome of a group project but is sometimes necessary if dysfunction rises to a level that it cannot complete the project.  One or more teammates or the instructor may initiate the process to split or reorganize a team.  Splitting teams does not necessarily work in any members' best interests, as team-based Team Assignments, which each team member must contribute to, are afterwards spread across fewer people.</p>
+<p>However, if the need arises, members must work with the professor to outline the issues which are creating the need to reorganize and the measures which remaining teammates may take to rectify the situation.  This can take the form of changes made to communication, workload reallocation, new meeting times, etc.  The professor will have the final say in establishing a set of expectations for the team, which must be met within a week.  If members fail to live up to these expectations, the team may be split and reorganized, as deemed necessary by the instructor.</p>
+<p>When reorganiztion occurs, each new team will set up their own folders starting with the former team's work, but  new material will be created by the new team, and old material adapted based on the new direction of each new team.  Any changes to the project definition due to the split (such as project scope, performance specifications, timeline, etc) will need to be coordinated with the instructor for all future submissions or presentations.</p>
+<blockquote>
+<p>The instructor has the final say in the establishment and reoganization of teams.</p>
+</blockquote>
+<h2 id="academic-integrity">Academic Integrity</h2>
+<p>This class is meant to teach you how to create and use your own design tools for creating folding robots using a variety of published resources, online resources, and classroom content.  I encourage you to plumb the depths of what's available; through this synthesis you might be able to create something unique.  However, I expect to be able to tell what is your work and what is someone else's.  For this reason, specific rules for this class are:</p>
+<h3 id="specific-rules">Specific Rules</h3>
+<ul>
+<li>Do your own work for individual assignments and tests.</li>
+<li>Include the your sources of inspiration within assignments and projects.  This will help grow the list of cool references, but more importantly, help distinguish inspiration from wholesale plagarism.</li>
+<li>Keep code/text/information you use from outside sources separate from your own original content (through the use of separate folders, for example).  Make it explicit what is yours and what is not.</li>
+<li>Include all the licenses or copyright statements as required by the things you reuse.  This will make your own code more reuseable for yourself and potentially others in the future.</li>
+<li>See <a href="https://provost.asu.edu/academic-integrity/policy">https://provost.asu.edu/academic-integrity/policy</a> for more info.</li>
+</ul>
+<p>Students in this class must adhere to ASU’s academic integrity policy, which can be found at <a href="https://provost.asu.edu/academic-integrity/policy">https://provost.asu.edu/academic-integrity/policy</a>. Students are responsible for reviewing this policy and understanding each of the areas in which academic dishonesty can occur. In addition, all engineering students are expected to adhere to both the ASU Academic Integrity Honor Code and the Fulton Schools of Engineering Honor Code. All academic integrity violations will be reported to the Fulton Schools of Engineering Academic Integrity Office (AIO).  The AIO maintains record of all violations and has access to academic integrity violations committed in all other ASU college/schools.</p>
+<h2 id="recordings">Recordings</h2>
+<p>Note that class sessions may be recorded, and recordings provided to enrolled students, instructors or instructional support personnel as deemed necessary by the course instructor. If you have concerns about being recorded, please contact the course instructor.</p>
+<h2 id="copyright">Copyright</h2>
+<p>All course content and materials, including lectures (Zoom recorded lectures included), are copyrighted materials and students may not share outside the class, upload to online websites not approved by the instructor, sell, or distribute course content or notes taken during the conduct of the course (see <a href="https://www.asu.edu/aad/manuals/acd/acd304-06.html">ACD 304–06</a>, "Commercial Note Taking Services" and ABOR Policy <a href="&lt;https://public.azregents.edu/Policy&gt; Manual/5-308-Student Code of Conduct.pdf">5-308 F.14</a> for more information).</p>
+<p>You must refrain from uploading to any course shell, discussion board, or website used by the course instructor or other course forum, material that is not the student's original work, unless the students first comply with all applicable copyright laws; faculty members reserve the right to delete materials on the grounds of suspected copyright infringement.</p>
+<h2 id="policy-against-threatening-behavior-per-the-student-services-manual-ssm-10402">Policy against threatening behavior, per the Student Services Manual, <a href="https://www.asu.edu/aad/manuals/ssm/ssm104-02.html">SSM 104–02</a></h2>
+<p>Students, faculty, staff, and other individuals do not have an unqualified right of access to university grounds, property, or services. Interfering with the peaceful conduct of university-related business or activities or remaining on campus grounds after a request to leave may be considered a crime. All incidents and allegations of violent or threatening conduct by an ASU student (whether on- or off-campus) must be reported to the ASU Police Department (ASU PD) and the Office of the Dean of Students.</p>
+<!--All students in this class are subject to ASU’s Academic Integrity Policy (available at <http://provost.asu.edu/academicintegrity>) and should acquaint themselves with its content and requirements, including a strict prohibition against plagiarism.  All violations will be reported to the Dean’s office, who maintain records of all offenses.  Students are expected to abide by the FSE Honor Code (<http://engineering.asu.edu/integrity/>).
+You are also expected to abide by the [Computer, Internet, and Electronic Communications Information Management Policy](http://www.asu.edu/aad/manuals/acd/acd125.html).-->
+
+<!--# Background
+This class is emerging from a class called *Informal Robotics*, taught at the Harvard Graduate School of Design in 2015 and 2016.  This class was developed by Chuch Hoberman, Daniel Aukes, and Jonathan Grinham, and introduced this and similar manufacturing methods to a group of mostly graduate students in design along with students from Harvard College, the School of Engineering and Applied Science, and MIT Engineering Students.  Classes paired lessons on the essentials of design, deployable structures, kinematics, manufacturing, and mechatronics, while presentations by guest researchers provided the context by which students understood the impact these new prototyping methods are having in research labs.  This class was the first joint collaboration between the Wyss Institute and the Harvard Graduate School of Design, and resulted in a symposium titled "Informal Robotics" in October 2016 which brought several high-impact researchers to the GSD to speak about their work in the field.   
+-->
+
+<!--# Course Activities
+
+The following activities will occupy the majority of your time in this class:
+
+* Reading and research.
+* Design & fabrication of laminate robots using rapid prototpying techniques.
+* Completing assignments and projects by programming in Python
+-->
+
+<!--
+## Proposed Focus
+Laminate Robotics will focus more deeply on the engineering topics required to be able to develop not only this class of devices, but to enable students to craft their own design tools from scratch as new manufacturing methods emerge from the research lab.  This class will focus on topics essential to robot designers, from kinematic and dynamic analysis and simulation, to strength of materials and FEA.
+
+### Kinematics
+The kinematics of laminate devices is inherently complex, because the network of folds created in 2D are spherical, nonlinear, and begin moving from a kinematic singularity.  All of these factors makes it non-intuitive to visualize and design motion from a network of rotational hinges.  We will introduce the concept of reference frames, degrees of freedom, and transformations, and demonstrate how these tools can be applied to serial and parallel systems consisting of rotational and translational elements.
+- Suggested reading: McCarthy
+
+### Dynamics
+Extending on the kinematics section, we will discuss the concepts of stiffness and damping as a function of the material properties of these multi-material systems, and analyze and discuss the impact rotational stiffness can have on an ideal kinematic system.  While the materials are typically lightweight, weight and inertia can also play a role in systems dominated by soft passive elements.  We will introduce tools for creating equations of motion and simulating multi-rigid-body systems.
+- Suggested Reading: Kane
+
+### Simulation
+Students will be introduced to the basics of dynamic simulation and be given the opportunity to create a simulation for a particular dynamic system.  Performance of their device will be evaluated across several scenarios and parameter sets, with students being asked to find and optimize designs.
+
+### Manufacturing
+The analysis of flat laminate systems requires pairing an understanding of the mathematical representation of laminates with the abilities, constraints, and limitations of the manufacturing methods used to make them.  We will introduce concepts such as constructive solid geometry, tool workspace, assembly/disassembly in order to provide students an understanding of manufacturability for this process.
+- Suggested Reading: ?
+
+### Stiffness Analysis
+As these systems are composed of materials as soft as plastic, paper, and cardboard, and as rigid as fiberglass, carbon fiber, and steel, there can be a wide range of performance with respect to the material systems used.  However, it has been observed that the precise kinematics of such systems can deviate widely from nominal in the presence of links which bend and deform under load.  This can have the effect of increasing the effective degrees of freedom, permitting unintended bending and twisting, which can result in shorter system lifespan and unintended, unmodeled behavior.  We will introduce the basic elements of FEA in order to analyze system performance.
+-->
+<!--
+## Final Projects
+
+### Design Tool Creation
+We will ask students to create a design tool for a novel manufacturing system, programmed in Python.  This  project will permit students to create reusable planning software which they can use to
+
+### Simulation Project
+Simulate the performance of a class of designs, find global optimum
+
+### Controls & Optimization
+Create a controller which can be optimized for a quadruped / hexapod walking robot.
+
+### Robotic Application
+Make a robotic or active laminate device that encodes unique motion through a novel transmission design
+
+-->
+
+<h2 id="disability-accommodations">Disability Accommodations</h2>
+<p>Suitable accommodations will be made for students having disabilities. Students needing accommodations must register with the ASU Disabilities Resource Center and provide documentation of that registration to the instructor. Students should communicate the need for an accommodation in sufficient time for it to be properly arranged. See <a href="https://www.asu.edu/aad/manuals/acd/acd304-08.html">ACD 304-08</a> Classroom and Testing Accommodations for Students with Disabilities.  </p>
+<p>The Americans with Disabilities Act (ADA) is a federal antidiscrimination statute that provides comprehensive civil rights protection for persons with disabilities. One element of this legislation requires that all qualified students with documented disabilities be guaranteed a learning environment that provides for reasonable accommodation of their disabilities. If you believe you have a disability requiring an accommodation please contact the Disability Resource Center at ASU Polytechnic located in Student Affairs Quad # 4 or call 480-727-1039 / TTY: 480-727-1009.  Eligibility and documentation policies are online at:  <a href="http://www.asu.edu/studentaffairs/ed/drc/">http://www.asu.edu/studentaffairs/ed/drc/</a></p>
+<h2 id="harassment-and-sexual-discrimination">Harassment and Sexual Discrimination</h2>
+<p>Arizona State University is committed to providing an environment free of discrimination, harassment, or retaliation for the entire university community, including all students, faculty members, staff employees, and guests. ASU expressly prohibits discrimination, harassment, and retaliation by employees, students, contractors, or agents of the university based on any protected status: race, color, religion, sex, national origin, age, disability, veteran status, sexual orientation, gender identity, and genetic information.</p>
+<p>Title IX is a federal law that provides that no person be excluded on the basis of sex from participation in, be denied benefits of, or be subjected to discrimination under any education program or activity.  Both Title IX and university policy make clear that sexual violence and harassment based on sex is prohibited.  An individual who believes they have been subjected to sexual violence or harassed on the basis of sex can seek support, including counseling and academic support, from the university.  If you or someone you know has been harassed on the basis of sex or sexually assaulted, you can find information and resources at <a href="https://sexualviolenceprevention.asu.edu/faqs">https://sexualviolenceprevention.asu.edu/faqs</a>.</p>
+<p>As a mandated reporter, I am obligated to report any information I become aware of regarding alleged acts of sexual discrimination, including sexual violence and dating violence.  ASU Counseling Services, <a href="https://eoss.asu.edu/counseling">https://eoss.asu.edu/counseling</a> is available if you wish to discuss any concerns confidentially and privately. ASU online students may access 360 Life Services, <a href="https://goto.asuonline.asu.edu/success/online-resources.html">https://goto.asuonline.asu.edu/success/online-resources.html</a>.</p>
+<h2 id="student-support-services">Student Support Services</h2>
+<ul>
+<li>ASU Libraries - offers 24/7 access to librarians through "Ask a Librarian" online chat and help by librarians in person at the Reference Desk during most hours the libraries are open. <a href="http://www.asu.edu/lib/">http://www.asu.edu/lib/</a></li>
+<li>Counseling and Consultation – provides confidential mental health and career counseling services for all ASU students. <a href="http://www.asu.edu/studentaffairs/counseling/">http://www.asu.edu/studentaffairs/counseling/</a></li>
+<li>Learning Resource Center – provides students with academic support services such as tutoring, peer advising, computer assisted instruction, and supplemental instruction.  Offers both free and fee-based services.  <a href="http://www.asu.edu/vpsa/lrc/">http://www.asu.edu/vpsa/lrc/</a></li>
+<li>Writing Center – provides on-site tutors to help students increase their confidence as writers and improve writing skills free of charge.  <a href="http://www.asu.edu/duas/wcenter/">http://www.asu.edu/duas/wcenter/</a></li>
+<li>Career Services – offers assistance to students in choosing a major, setting career goals, interviewing and job hunting strategies. <a href="http://career.asu.edu/">http://career.asu.edu/</a></li>
+<li>Student Financial Aid Office – offers information and applications for student funding such as grants, loans, scholarships and student employment. <a href="http://www.asu.edu/fa/">http://www.asu.edu/fa/</a></li>
+<li>Student Health and Wellness Center – provides non-emergency medical health care to all ASU students regardless of insurance status. Most visits with a physician or nurse practitioner are free of charge, but fees will be incurred for x-rays, lab results, etc., <a href="http://www.asu.edu/health/">http://www.asu.edu/health/</a></li>
+<li>Student Recreational Center – offers individual and group fitness opportunities, as well as information on nutrition and wellness, and massages. Use of the general facilities (weights, circuit training and cardio machines) are free, other services (yoga classes, massages) are fee-based.  <a href="http://www.asu.edu/src/">http://www.asu.edu/src/</a></li>
+<li>Student Legal Assistance – provides legal advice and counsel free of charge to all ASU students in areas such as landlord-tenant law, credit reports and collection issues, taxability of scholarships and grants, etc. Notary service is also available at no charge. <a href="http://www.asu.edu/mu/legal/">http://www.asu.edu/mu/legal/</a></li>
+<li>Help Wiki – provides a frequently asked questions resource for technology users at ASU. <a href="http://wiki.asu.edu/help/">http://wiki.asu.edu/help/</a></li>
+<li>EMPACT Crisis Hotline – offers free 24-hour support for mental health crises. Call (480) 784-1500 in the Phoenix area, (866) 205-5229 for the toll-free number outside of Phoenix, and (480) 736-4949 for the sexual assault hotline. All services are free and confidential. <a href="http://www.empact-spc.com/">http://www.empact-spc.com/</a></li>
+</ul>
+<!--
+# Data Collection for Research Purposes
+
+You will be given more information and an opportunity to participate in research investigating effective teaching methods with regard to manufacturing topics.  This will involve collecting assignment and project submissions as well as physical artifacts that you build in class for the purposes of studying effective teaching and learning practices with regards to building manufacturing knowledge.  I will also collect samples of your work, video submissions you make, and final presentations.  For more information, please refer to the disclosure form, which you will receive on the first day of class.
+-->
+<h2 id="notice">Notice</h2>
+<blockquote>
+<p>Any information in this syllabus (other than grading and absence policies) may be subject to change with reasonable advance notice.</p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
